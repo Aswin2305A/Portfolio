@@ -94,10 +94,10 @@ nav {
   color: var(--navy); letter-spacing: -0.02em;
   margin-bottom: 0.75rem;
 }
-.hero-name em { font-style: italic; color: var(--gold); font-weight: 400; }
+.hero-name em { font-style: normal; color: var(--gold); font-weight: 400; }
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.25rem; font-weight: 400; font-style: italic;
+  font-size: 1.25rem; font-weight: 400; font-style: normal;
   color: var(--muted); margin-bottom: 2.25rem;
 }
 .hero-desc {
@@ -168,7 +168,7 @@ h2 {
   font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 600; line-height: 1.1;
   color: var(--navy); letter-spacing: -0.02em;
 }
-h2 em { font-style: italic; font-weight: 400; color: var(--gold); }
+h2 em { font-style: normal; font-weight: 400; color: var(--gold); }
 .sdesc { font-size: 0.92rem; font-weight: 300; color: var(--muted); line-height: 1.8; max-width: 52ch; margin-top: 0.75rem; }
 
 /* SKILLS */
@@ -207,7 +207,10 @@ h2 em { font-style: italic; font-weight: 400; color: var(--gold); }
   font-size: 1.35rem; font-weight: 600; color: var(--navy);
   letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 0.75rem; transition: color 0.2s;
 }
-.pdesc { font-size: 0.88rem; font-weight: 300; color: var(--muted); line-height: 1.85; max-width: 60ch; margin-bottom: 1.25rem; }
+.pdesc { font-size: 0.88rem; font-weight: 300; color: var(--muted); line-height: 1.85; max-width: 60ch; margin-bottom: 1rem; }
+.plist { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; max-width: 62ch; margin-bottom: 1.25rem; }
+.plist li { font-size: 0.84rem; font-weight: 300; color: var(--muted); line-height: 1.7; display: flex; gap: 0.75rem; align-items: baseline; }
+.plist li::before { content: '—'; color: var(--rule-dark); flex-shrink: 0; }
 .pstack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .pt {
   font-size: 0.7rem; font-weight: 400; padding: 0.2rem 0.65rem;
@@ -270,7 +273,7 @@ h2 em { font-style: italic; font-weight: 400; color: var(--gold); }
   font-size: clamp(2.25rem, 4vw, 3.5rem); font-weight: 600; line-height: 1.05;
   color: var(--ivory); letter-spacing: -0.025em; margin-bottom: 1.5rem;
 }
-.ch em { font-style: italic; font-weight: 400; color: var(--gold-lt); }
+.ch em { font-style: normal; font-weight: 400; color: var(--gold-lt); }
 .cs { font-size: 0.92rem; font-weight: 300; color: rgba(247,244,239,0.55); line-height: 1.9; }
 .cr {
   display: flex; flex-direction: column; gap: 1px;
@@ -386,49 +389,69 @@ footer {
 
 <!-- PROJECTS -->
 <div class="sw" id="projects">
-  <div class="sh rv"><div class="sn">02 — Projects</div><div><h2>Selected <em>Work</em></h2><p class="sdesc">Engineering projects spanning machine learning, cybersecurity, IoT, and systems simulation.</p></div></div>
+  <div class="sh rv"><div class="sn">02 — Projects</div><div><h2>Selected <em>Work</em></h2><p class="sdesc">Nine engineering projects spanning IoT, healthcare, algorithms, machine learning, cybersecurity, and systems simulation.</p></div></div>
   <div class="pl">
 
     <a class="pi rv" href="https://github.com/Aswin2305A/ARVR_IoT" target="_blank" rel="noopener">
       <div class="pnum">01</div>
       <div>
-        <div class="pd">IoT · Machine Learning · AR</div>
+        <div class="pd">IoT · Machine Learning · Augmented Reality</div>
         <div class="pn">Smart Soil Monitoring &amp; Crop Recommendation System</div>
-        <p class="pdesc">An end-to-end IoT agriculture platform connecting NPK soil sensors to an ensemble ML model (Random Forest, XGBoost, LightGBM) achieving 96.59% prediction accuracy across 22 crop types. Features gesture-based sensor control and an AR dashboard for real-time nutrient visualisation.</p>
+        <p class="pdesc">An end-to-end IoT agriculture platform connecting NPK soil sensors to an ensemble ML model, with gesture-based sensor control and an AR dashboard for real-time nutrient visualisation.</p>
+        <ul class="plist">
+          <li>Trains an ensemble model (Random Forest + XGBoost + LightGBM) on 99 engineered features derived from just 3 raw NPK readings, reaching 96.59% test accuracy across 22 crop types.</li>
+          <li>Streams live soil data from an Arduino-connected NPK sensor over serial (4800 baud) into a Flask backend with MongoDB-backed historical tracking.</li>
+          <li>Adds a hands-free gesture-controlled sensor toggle and an AR interface for real-time nutrient visualisation, layered on top of a standard web dashboard.</li>
+        </ul>
         <div class="pstack"><span class="pt">Python</span><span class="pt">Flask</span><span class="pt">XGBoost</span><span class="pt">LightGBM</span><span class="pt">Arduino</span><span class="pt">MongoDB</span><span class="pt">AR/VR</span></div>
       </div>
       <div class="pa">↗</div>
     </a>
 
-    <a class="pi rv" href="https://github.com/Aswin2305A/VirtualChemistryLabAssistant" target="_blank" rel="noopener">
+    <a class="pi rv" href="https://github.com/Roshan07abhi/HELIX-HEALTH-CARE" target="_blank" rel="noopener">
       <div class="pnum">02</div>
       <div>
-        <div class="pd">AI · Education · NLP</div>
-        <div class="pn">Virtual Chemistry Lab Assistant</div>
-        <p class="pdesc">AI-powered educational web platform providing a safe virtual chemistry laboratory. Integrates Google Gemini 2.5 Flash for real-time Q&A, automatic hazard assessment, interactive periodic table for all 118 elements, and a chemical reaction simulator with safety ratings.</p>
-        <div class="pstack"><span class="pt">Python</span><span class="pt">Flask</span><span class="pt">Gemini AI</span><span class="pt">JavaScript</span><span class="pt">NLP</span></div>
+        <div class="pd">Healthcare · AI · Full-Stack</div>
+        <div class="pn">Helix Health Care — AI Health Companion</div>
+        <p class="pdesc">A Flask-based AI health companion that lets users discuss health concerns with an AI assistant, track medication and hydration reminders, and manage their health profile with automated email notifications.</p>
+        <ul class="plist">
+          <li>Built a Flask application backed by MongoDB for user authentication, health profile storage, and persistent conversation history.</li>
+          <li>Integrates a dedicated AI helper module that powers real-time conversational health Q&amp;A, alongside scheduled medication and hydration reminders.</li>
+          <li>Automates reminder and password-reset delivery through an email pipeline (MailerSend integration), with admin-seeding and account-verification scripts for management.</li>
+        </ul>
+        <div class="pstack"><span class="pt">Python</span><span class="pt">Flask</span><span class="pt">MongoDB</span><span class="pt">AI Integration</span><span class="pt">MailerSend</span></div>
       </div>
       <div class="pa">↗</div>
     </a>
 
-    <a class="pi rv" href="https://github.com/Aswin2305A/GoldPricePrediction_using_LSTM" target="_blank" rel="noopener">
+    <a class="pi rv" href="https://github.com/Aswin2305A/WikiOrbit" target="_blank" rel="noopener">
       <div class="pnum">03</div>
       <div>
-        <div class="pd">Deep Learning · Time Series</div>
-        <div class="pn">Gold Price Prediction using LSTM</div>
-        <p class="pdesc">Time-series forecasting model using stacked LSTM layers (3×64 units) trained on a decade of daily gold price data. Implements a 60-day sliding window with comprehensive evaluation — MSE, RMSE, MAE, MAPE, R² — and interactive Plotly visualisations.</p>
-        <div class="pstack"><span class="pt">TensorFlow</span><span class="pt">Keras</span><span class="pt">LSTM</span><span class="pt">Pandas</span><span class="pt">Plotly</span><span class="pt">Scikit-learn</span></div>
+        <div class="pd">Algorithms · Data Visualisation · Graph Theory</div>
+        <div class="pn">WikiOrbit — Wikipedia Link-Graph &amp; PageRank Explorer</div>
+        <p class="pdesc">A fully client-side tool that crawls Wikipedia's live link graph and computes PageRank from first principles, rendering the result as an interactive force-directed network — no backend, no libraries.</p>
+        <ul class="plist">
+          <li>Implements PageRank from scratch via power iteration (40 rounds, 0.85 damping factor) directly in the browser, with no server or external graph libraries.</li>
+          <li>Breadth-first crawler pulls live data from the Wikipedia Action API up to depth 3 (200+ pages), with request throttling and page caps to stay API-friendly.</li>
+          <li>Renders a custom force-directed graph on HTML5 Canvas — 120 iterations of repulsion/spring physics — with pan, zoom, and a gold-highlighted PageRank leaderboard.</li>
+        </ul>
+        <div class="pstack"><span class="pt">JavaScript</span><span class="pt">HTML5 Canvas</span><span class="pt">PageRank</span><span class="pt">Wikipedia API</span><span class="pt">Graph Theory</span></div>
       </div>
       <div class="pa">↗</div>
     </a>
 
-    <a class="pi rv" href="https://github.com/Aswin2305A/CyberSecurityPJ-AES-RSA" target="_blank" rel="noopener">
+    <a class="pi rv" href="https://github.com/Aswin2305A/Time_Debt_Simulator" target="_blank" rel="noopener">
       <div class="pnum">04</div>
       <div>
-        <div class="pd">Cybersecurity · Cryptography</div>
-        <div class="pn">Image Steganography &amp; Cryptography Application</div>
-        <p class="pdesc">Flask web application embedding AES-256-CBC encrypted messages inside images via LSB steganography. Implements RSA-OAEP hybrid encryption, PBKDF2 key derivation, and HMAC-SHA256 integrity verification — ensuring both secrecy and authenticity of embedded data.</p>
-        <div class="pstack"><span class="pt">Python</span><span class="pt">Flask</span><span class="pt">AES-256</span><span class="pt">RSA-OAEP</span><span class="pt">PBKDF2</span><span class="pt">HMAC</span></div>
+        <div class="pd">Game Development · Systems Design</div>
+        <div class="pn">Time Debt Simulator</div>
+        <p class="pdesc">A browser-based 2D survival game built entirely from scratch in vanilla JavaScript, where every action drains the player's lifespan across an 8-zone, 9000px-wide procedurally-seeded world.</p>
+        <ul class="plist">
+          <li>Built a complete 2D game engine from scratch in ~530 lines of vanilla JS — custom AABB collision, exponential camera lerp, and a seeded Linear Congruential Generator for deterministic world generation.</li>
+          <li>Drives enemy behaviour with a finite-state machine (patrol → chase → attack) across 3 enemy variants, alongside an 8-state game flow covering menu, difficulty, play, pause, and win/lose screens.</li>
+          <li>Unifies keyboard and touch input into one control scheme, with checkpoint saves, localStorage persistence, and delta-time-based movement for consistent physics at any frame rate.</li>
+        </ul>
+        <div class="pstack"><span class="pt">JavaScript</span><span class="pt">HTML5 Canvas</span><span class="pt">Game Loop</span><span class="pt">Finite State Machines</span><span class="pt">Seeded RNG</span></div>
       </div>
       <div class="pa">↗</div>
     </a>
@@ -436,9 +459,14 @@ footer {
     <a class="pi rv" href="https://github.com/Aswin2305A/DMC-Compression" target="_blank" rel="noopener">
       <div class="pnum">05</div>
       <div>
-        <div class="pd">Algorithms · Data Compression</div>
+        <div class="pd">Algorithms · Information Theory · Data Compression</div>
         <div class="pn">Dynamic Markov Compression (DMC)</div>
-        <p class="pdesc">Full implementation of Dynamic Markov Compression — a lossless algorithm pairing k-th order Markov chain modelling with arithmetic coding. Achieves ~27% compression ratio on genomic sequences by approaching Shannon entropy limits, implemented in both Python and C.</p>
+        <p class="pdesc">A from-scratch implementation of Dynamic Markov Compression — a lossless algorithm pairing k-th order Markov chain modelling with arithmetic coding — built in both Python and C.</p>
+        <ul class="plist">
+          <li>Implements Dynamic Markov Compression from first principles, combining k-th order Markov chain modelling with arithmetic coding in parallel Python and C implementations.</li>
+          <li>Achieves ~27% compression ratio on genomic sequences by dynamically building a bit-level predictive model during encoding, with no separate model storage required.</li>
+          <li>Uses a memory-efficient state-cloning technique and benchmarks compression ratio vs. speed trade-offs across Markov orders 1 through 8.</li>
+        </ul>
         <div class="pstack"><span class="pt">Python</span><span class="pt">C</span><span class="pt">Markov Chains</span><span class="pt">Arithmetic Coding</span><span class="pt">Information Theory</span></div>
       </div>
       <div class="pa">↗</div>
@@ -447,10 +475,63 @@ footer {
     <a class="pi rv" href="https://github.com/Aswin2305A/GpuAcceleratedTrafficFlowSimulation" target="_blank" rel="noopener">
       <div class="pnum">06</div>
       <div>
-        <div class="pd">Simulation · Systems</div>
+        <div class="pd">Simulation · Systems Design</div>
         <div class="pn">GPU-Accelerated Traffic Flow Simulation</div>
-        <p class="pdesc">Realistic four-way intersection simulator in Pygame with multi-phase signal coordination, pedestrian crossing logic, vehicle state machines (approaching → waiting → turning → leaving), and real-time GPU performance monitoring via pynvml.</p>
+        <p class="pdesc">A realistic four-way intersection simulator in Pygame with multi-phase signal coordination, pedestrian crossing logic, and real-time GPU performance monitoring.</p>
+        <ul class="plist">
+          <li>Simulates a full four-way intersection with multi-phase signal coordination (NS/EW green-yellow-pedestrian cycles) and realistic right-of-way logic.</li>
+          <li>Models vehicles and pedestrians as finite-state machines (approaching → waiting → turning/crossing → leaving), with collision avoidance and left-turn yielding.</li>
+          <li>Ships a real-time HUD with FPS, frame time, and live GPU utilisation/memory stats via pynvml, alongside configurable spawn rates and vehicle types.</li>
+        </ul>
         <div class="pstack"><span class="pt">Python</span><span class="pt">Pygame</span><span class="pt">pynvml</span><span class="pt">State Machines</span><span class="pt">Simulation</span></div>
+      </div>
+      <div class="pa">↗</div>
+    </a>
+
+    <a class="pi rv" href="https://github.com/Aswin2305A/CyberSecurityPJ-AES-RSA" target="_blank" rel="noopener">
+      <div class="pnum">07</div>
+      <div>
+        <div class="pd">Cybersecurity · Cryptography</div>
+        <div class="pn">Image Steganography &amp; Cryptography Application</div>
+        <p class="pdesc">A Flask web application embedding AES-256-CBC encrypted messages inside images via LSB steganography, with RSA-OAEP hybrid encryption for secure key exchange.</p>
+        <ul class="plist">
+          <li>Combines AES-256-CBC encryption with PBKDF2 key derivation and HMAC-SHA256 integrity verification before embedding ciphertext into images via LSB steganography.</li>
+          <li>Supports RSA-OAEP hybrid encryption so symmetric message keys can be exchanged securely alongside the encrypted payload.</li>
+          <li>Packaged as a Dockerized Flask app with a Tailwind-based UI, automated tests, and a SQLite datastore for tracking encoded artefacts.</li>
+        </ul>
+        <div class="pstack"><span class="pt">Python</span><span class="pt">Flask</span><span class="pt">AES-256</span><span class="pt">RSA-OAEP</span><span class="pt">PBKDF2</span><span class="pt">HMAC</span><span class="pt">Docker</span></div>
+      </div>
+      <div class="pa">↗</div>
+    </a>
+
+    <a class="pi rv" href="https://github.com/Aswin2305A/VirtualChemistryLabAssistant" target="_blank" rel="noopener">
+      <div class="pnum">08</div>
+      <div>
+        <div class="pd">AI · Education · NLP</div>
+        <div class="pn">Virtual Chemistry Lab Assistant</div>
+        <p class="pdesc">An AI-powered educational web platform providing a safe virtual chemistry laboratory, built with Flask and Google's Gemini AI for real-time Q&amp;A and hazard assessment.</p>
+        <ul class="plist">
+          <li>Integrates Google Gemini 2.5 Flash to answer chemistry questions and auto-generate hazard ratings (HAZARDOUS / NON-HAZARDOUS) for any experiment or reaction.</li>
+          <li>Ships an interactive periodic table covering all 118 elements, plus a reaction simulator that validates chemical equations and predicts products.</li>
+          <li>Implements separate student and faculty portals, with a faculty dashboard for monitoring live student activity and session tracking.</li>
+        </ul>
+        <div class="pstack"><span class="pt">Python</span><span class="pt">Flask</span><span class="pt">Gemini AI</span><span class="pt">JavaScript</span><span class="pt">NLP</span></div>
+      </div>
+      <div class="pa">↗</div>
+    </a>
+
+    <a class="pi rv" href="https://github.com/Aswin2305A/GoldPricePrediction_using_LSTM" target="_blank" rel="noopener">
+      <div class="pnum">09</div>
+      <div>
+        <div class="pd">Deep Learning · Time Series</div>
+        <div class="pn">Gold Price Prediction using LSTM</div>
+        <p class="pdesc">A time-series forecasting model using stacked LSTM layers, trained on a decade of daily gold price data with a 60-day sliding window and full evaluation suite.</p>
+        <ul class="plist">
+          <li>Trains a stacked 3-layer LSTM (64 units each, ~85K parameters) on a decade of daily gold prices using a 60-day sliding-window sequence approach.</li>
+          <li>Benchmarks performance with a full metric suite — MSE, RMSE, MAE, MAPE, and R² — alongside dropout regularisation to reduce overfitting.</li>
+          <li>Produces interactive Plotly visualisations comparing training, actual, and predicted price trajectories across the 2022 test period.</li>
+        </ul>
+        <div class="pstack"><span class="pt">TensorFlow</span><span class="pt">Keras</span><span class="pt">LSTM</span><span class="pt">Pandas</span><span class="pt">Plotly</span><span class="pt">Scikit-learn</span></div>
       </div>
       <div class="pa">↗</div>
     </a>
